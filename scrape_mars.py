@@ -40,7 +40,8 @@ def scrape():
             "Attribute":info[0],
             "Info":info[1]
         })
-    table_html = pd.DataFrame(mars_info).to_html()
+
+    table_html = pd.DataFrame(mars_info).to_html(index=False, header=False, classes=["table","table-striped","table-bordered"])
 
     # Visit the next site for hemispheres and grab all the links
     browser.visit("https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars")
@@ -72,6 +73,3 @@ def scrape():
 
     return mars_content
 
-
-
-# def get_url(url):
