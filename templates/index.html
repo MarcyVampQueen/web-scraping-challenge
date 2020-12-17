@@ -9,27 +9,27 @@
 
 </head>
 <body>
-    <a href="scrape">
-        <div class="alert alert-info" role="alert">
-            Welcome to the Mars Mission! Click me to refresh with the latest data.
-        </div>
-    </a>
+    <br>
+
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <br>
-                <h3>Latest Mars News</h3>
+                <h3>Latest Mars News:</h3>
                 <h4>{{data["title"]}}</h4>
                 <p>{{data["content"]}}</p>
                 <hr>
             </div>
             <div class="col-md-4">
-                {{data['feature']}}
-                <img src="{{data['feature']}}" alt="featured image" style="max-height:200px; object-fit: scale-down;">
+                <a href="scrape">
+                    <div class="alert alert-info" role="alert">
+                        Welcome to the Mars Mission! Click me to refresh with the latest data.
+                    </div>
+                </a>
             </div>
         </div>
         <div class="row">
             <div class="col-md-8">
+                <h3>The Hemispheres of Mars</h3>
                 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -64,6 +64,11 @@
                   </div>
             </div>
             <div class="col-md-4">
+                <h3>Featured Image</h3>
+                <img src="{{data['feature']}}" alt="featured image" style="max-height:200px;">
+                <br>
+                <br>
+                <h3>Mars Quick Facts!</h3>
                 {{data["facts"]|safe}}
             </div>
         </div>
